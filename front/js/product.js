@@ -16,7 +16,7 @@ let productDescriptions = document.getElementById('description');
 let clickArticles = document.getElementsByTagName('a');
 clickArticles.addEventListener('click', function (event) {
     let allproductNames = document.getElementsByClassName('productName');
-    allproductNames.addEventListener('change'), function (event) {
+    allproductNames.addEventListener('click'), function (event) {
         let titleProducts = document.getElementById('title');
         titleProducts.innerText = e.target.value;
     }
