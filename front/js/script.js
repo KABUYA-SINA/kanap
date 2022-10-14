@@ -1,3 +1,3 @@
 //variables
 
-const products = document.getElementById('items'); 
+const allProducts = document.getElementById('items'); 
