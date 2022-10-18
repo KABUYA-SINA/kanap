@@ -21,8 +21,6 @@ fetch('http://localhost:3000/api/products/'+productId)
                     productDescriptions.innerHTML = product.description; 
 
 
-
-
                     let selects = document.getElementsByTagName('select');
                     for (let select of selects) {
                         select.addEventListener('click', function () {
