@@ -21,98 +21,48 @@ fetch('http://localhost:3000/api/products/'+productId)
                     productDescriptions.innerHTML = product.description; 
 
 
-                    
 
 
+                    let selects = document.getElementsByTagName('select');
+                    for (let select of selects) {
+                        select.addEventListener('click', function () {
 
-                    // let selects = document.getElementsByTagName('select'); 
-                    // for (let select of selects){
-                    //     select.addEventListener('click', function (event){
-                    //         event.preventDefault();
-                    //         const allOptionValues = document.getElementById('colors')
-                    //         for (let allOptionValue of allOptionValues) {
-                    //         allOptionValues.addEventListener('click', function(){
-                    //             allOptionValues.innerHTML = product.colors;
-                    //             console.log(select); 
-                    //         })
-                    //     }}); 
-                    // }
+                            const allOptionValues = document.getElementById('colors');
+                            for (let allOptionValue of allOptionValues) {
+                                for (var i = 0; i < allOptionValues.length; i++) {
+                                    // allOptionValues[i] = allOptionValue;
+                                    allOptionValue.innerHTML = ` <option value="${product.colors[i]}">${product.colors[i]}</option>`
+                                    console.log(allOptionValue);
+                                }
 
-                    // const allOptionValues = document.getElementById('colors');
-                    // allOptionValues.addEventListener('click', function(){
-                    //     for (let allOptionValue of allOptionValues){
-                    //         allOptionValue.addEventListener('change', function(){
-                    //             let options = document.getElementsByTagName('option')
-                    //             for (let i = 0; i < options.length; i++) {
-                    //                 let option = options[i];
-                    //                 option.innerHTML = product.colors;
-                    //             }
-                    //         });
-
-                    //     }
- 
-                    // }); 
-
-
-
-
-
-
-
-
-                        // for (let allOptionValue of allOptionValues){
-                        //     allOptionValue.addEventlistener('click', function(){
-                        //         let options = document.getElementsByTagName('option')
-                        //         for (let i = 0; i < options.length; i++) {
-                        //             let option = options[i];
-                        //             option.innerHTML = product.colors;
-                        //             console.log(option);
-                        //         }
-                        //     });
-                        // }
-                            
-
-
-
-                        //    function onClick (e){
-                        //        let options = document.getElementsByTagName('option')
-                        //        for (let i = 0; i < options.length; i++) {
-                        //            let option = options[i];
-                        //            option.innerHTML = product.colors;
-                        //            console.log(option);
-                        //        }
-                        //    }
-                        
-
-
-
-
-
-                        //for (let i = 0; i < allOptionValues; i++)
-                        //allOptionValue.innerHTML = product.colors;
-                        //i.innerHTML = product.colors;
-                    // for (let allOptionValue of allOptionValues)
-                    //     allOptionValue.innerHTML = product.colors;
-                    // allOptionValues.addEventListener('click', function(e){
-                    //     allOptionValues.innerHTML = product.colors; //e.target.value;// product.colors; 
-                    // });
-
-
+                            }
+                        });
+                    }
 
                     
                     console.log(product); 
                     console.log(images);
-                    //console.log(allOptionValues); 
+
+
+                    let allQuantityObjets = document.getElementById('quantity');
+                    // for (let allQuantityObjet of allQuantityObjets){
+                        allQuantityObjets.addEventListener('change', function (e){});
+                    // }
+
+                    console.log(allQuantityObjets);
                 }); 
 
         }
 
     })
 
+ 
+    
+
 
 // all value option 
 
-const allQuantityObjets = document.getElementById('quantity');
+//const allQuantityObjets = document.getElementById('quantity');
 // all quantity products
 
 
