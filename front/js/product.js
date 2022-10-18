@@ -31,8 +31,8 @@ fetch('http://localhost:3000/api/products/'+productId)
                             for (let allOptionValue of allOptionValues) {
                                 for (var i = 0; i < allOptionValues.length; i++) {
                                     // allOptionValues[i] = allOptionValue;
-                                    allOptionValue.innerHTML = ` <option value="${product.colors[i]}">${product.colors[i]}</option>`
-                                    console.log(allOptionValue);
+                                    allOptionValues.innerHTML = ` <option value="${product.colors[i]}">${product.colors[i]}</option>`
+                                    console.log(allOptionValues);
                                 }
 
                             }
@@ -45,11 +45,11 @@ fetch('http://localhost:3000/api/products/'+productId)
 
 
                     let allQuantityObjets = document.getElementById('quantity');
-                    // for (let allQuantityObjet of allQuantityObjets){
-                        allQuantityObjets.addEventListener('change', function (e){});
-                    // }
 
-                    console.log(allQuantityObjets);
+                         allQuantityObjets.addEventListener('change', function (e){
+                            allQuantityObjets.innerHTML = e.target.value; 
+                             console.log(e.target.value); 
+                        });
                 }); 
 
         }
