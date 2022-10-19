@@ -20,24 +20,17 @@ fetch('http://localhost:3000/api/products/'+productId)
                     let productDescriptions = document.getElementById('description');
                     productDescriptions.innerHTML = product.description; 
 
+                    const allOptionValues = document.getElementById('colors');
+                    for (let i = 0; i < product.colors.length; i++){
 
-                    let selects = document.getElementsByTagName('select');
-                    for (let select of selects) {
-                        select.addEventListener('click', function () {
+                        let options = document.createElement('option');
+                        const allOptionValues = document.getElementById('colors');
 
-                            const allOptionValues = document.getElementById('colors');
-                            for (let allOptionValue of allOptionValues) {
-                                for (var i = 0; i < allOptionValues.length; i++) {
-                                    // allOptionValues[i] = allOptionValue;
-                                    allOptionValues.innerHTML = ` <option value="${product.colors[i]}">${product.colors[i]}</option>`
-                                    console.log(allOptionValues);
-                                }
+                        allOptionValues.appendChild(options); 
 
-                            }
-                        });
+                        options.innerHTML = ` <option value="${product.colors[i]}">${product.colors[i]}</option>`
+
                     }
-
-                    
                     console.log(product); 
                     console.log(images);
 
