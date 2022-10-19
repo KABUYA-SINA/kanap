@@ -68,32 +68,17 @@
                       <option value="">--SVP, choisissez une couleur --</option>
 <!--                       <option value="vert">vert</option>
                       <option value="blanc">blanc</option> -->
-                      <!-- <option value="Blue">Bleu</option>
-                      <option value="White">Blanc</option>
-                      <option value="Black">Noir</option>
-                      <option value="Black/Yellow">Noir/Jaune</option>
-                      <option value="Black/Red">Noir/Rouge</option>
-                      <option value="Green">Vert</option>
-                      <option value="Red">Rouge</option>
-                      <option value="Orange">Orange</option>
-                      <option value="Pink">Rose</option>
-                      <option value="Gray">Gris</option>
-                      <option value="Purple">Violet</option>
-                      <option value="Navy"> Bleu marine</option>
-                      <option value="Silver">Argent</option>
-                      <option value="Yellow">Jaune</option>
-                      <option value="Brown">Brun</option> -->
                   </select>
                 </div>
 
                 <div class="item__content__settings__quantity">
                   <label for="itemQuantity">Nombre d'article(s) (1-100) :</label>
-                  <input type="number" name="itemQuantity" min="1" max="100" value="0" id="quantity">
+                  <input type="number" name="itemQuantity" min="1" step="1" max="100" value="0" id="quantity">
                 </div>
               </div>
 
               <div class="item__content__addButton">
-                <button id="addToCart">Ajouter au panier</button>
+                <button type='submit' id="addToCart">Ajouter au panier</button>
               </div>
 
             </div>

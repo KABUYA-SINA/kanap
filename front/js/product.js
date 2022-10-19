@@ -36,11 +36,23 @@ fetch('http://localhost:3000/api/products/'+productId)
 
 
                     let allQuantityObjets = document.getElementById('quantity');
-
                          allQuantityObjets.addEventListener('change', function (e){
                             allQuantityObjets.innerHTML = e.target.value; 
-                             console.log(e.target.value); 
+                           // console.log(e.target.value); 
                         });
+
+
+                    //submit.addEventListerner("submit", function(e)) + create function send? FETCH In ?
+
+                    let submit = document.getElementById('addToCart'); 
+                    submit.addEventListener('click', function(e){
+                        e.preventDefault; 
+                        e.stopPropagation; 
+
+                        console.log(submit);
+
+                    });
+
                 }); 
 
         }
