@@ -23,12 +23,28 @@ fetch('http://localhost:3000/api/products/'+productId)
                     const allColors = document.getElementById('colors');
                     for (let i = 0; i < product.colors.length; i++){
 
-                        let options = document.createElement('option');
-                        const allColors = document.getElementById('colors');
+                            let options = document.createElement('option');
+                            const allColors = document.getElementById('colors');
 
-                        allColors.appendChild(options); 
+                            allColors.appendChild(options);
 
-                        options.innerHTML = ` <option value="${product.colors[i]}">${product.colors[i]}</option>`
+                            options.innerHTML = ` <option value="${product.colors[i]}">${product.colors[i]}</option>`
+
+
+                            allColors.addEventListener('change', function(e){
+                                for (let i = 0; i > product.colors.length; i++) {
+                                    options.innerHTML = e.target.value;
+
+                                } 
+                                let colorChoices = e.target.value; 
+
+                                //console.log(colorChoices); 
+                            });
+
+
+
+
+
 
                     }
                     console.log(product); 
@@ -38,7 +54,9 @@ fetch('http://localhost:3000/api/products/'+productId)
                     let allQuantityObjets = document.getElementById('quantity');
                          allQuantityObjets.addEventListener('change', function (e){
                             allQuantityObjets.innerHTML = e.target.value; 
+                             let clientChoices = e.target.value; 
                            // console.log(e.target.value); 
+                             console.log(clientChoices);
                         });
 
 
