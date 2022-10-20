@@ -54,9 +54,9 @@ fetch('http://localhost:3000/api/products/'+productId)
                     let allQuantityObjets = document.getElementById('quantity');
                          allQuantityObjets.addEventListener('change', function (e){
                             allQuantityObjets.innerHTML = e.target.value; 
-                             let clientChoices = e.target.value; 
+                             let clientQuantity = e.target.value; 
                            // console.log(e.target.value); 
-                             console.log(clientChoices);
+                             console.log(clientQuantity);
                         });
 
 
