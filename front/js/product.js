@@ -22,7 +22,6 @@ fetch('http://localhost:3000/api/products/'+productId)
 
                     const allColors = document.getElementById('colors');
                     for (let i = 0; i < product.colors.length; i++){
-
                             let options = document.createElement('option');
                             const allColors = document.getElementById('colors');
 
@@ -40,12 +39,6 @@ fetch('http://localhost:3000/api/products/'+productId)
 
                                 //console.log(colorChoices); 
                             });
-
-
-
-
-
-
                     }
                     console.log(product); 
                     console.log(images);
@@ -56,20 +49,25 @@ fetch('http://localhost:3000/api/products/'+productId)
                             allQuantityObjets.innerHTML = e.target.value; 
                              let clientQuantity = e.target.value; 
                            // console.log(e.target.value); 
-                             console.log(clientQuantity);
+                            // console.log(clientQuantity);
                         });
 
 
-                    //submit.addEventListerner("submit", function(e)) + create function send? FETCH In ?
+                    //submit.addEventListerner("submit", function(e)) ||  + create function send? FETCH In ?
 
-                    let submit = document.getElementById('addToCart'); 
-                    submit.addEventListener('click', function(e){
-                        e.preventDefault; 
-                        e.stopPropagation; 
+                    // let submit = document.getElementById('addToCart'); 
+                    // submit.addEventListener('click', function(e){
+                    //     e.preventDefault; 
+                    //     e.stopPropagation;
+                        
+                    //     if (clientQuantity < 1 && colorChoices == false) {
+                    //             alert('you must choose a color and quantity from 1 to 100');
+                    //         }
+                    //     else {
+                    //             alert('your products are added to the cart')
+                    //     }
 
-                        console.log(submit);
-
-                    });
+                    // });
 
                 }); 
 
