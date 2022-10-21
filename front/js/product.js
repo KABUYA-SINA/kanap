@@ -19,27 +19,6 @@ fetch('http://localhost:3000/api/products/'+productId)
 
                     let productDescriptions = document.getElementById('description');
                     productDescriptions.innerHTML = product.description;
-                    
-                    // const allColors = document.getElementById('colors');
-                    // for (let allColor of product.colors){
-                    //     let option = document.createElement('option');
-                    //     option.value = allColor;
-                    //     option.innerHTML = allColor; 
-                    //     allColors.appendChild(option);
-
-                    //     allColors.addEventListener('change', function(e){
-                    //         for (let i in product.colors.length){
-                    //             option.innerHTML = e.target.value;
-                    //         }
-                    //         let colorChoices = e.target.value;
-                    //         console.log(colorChoices); 
-
-                    //     });
-
-
-                    //     console.log(option);
-                    //     console.log(allColor);
-                    // }
 
 
                     const allColors = document.getElementById('colors');
@@ -51,15 +30,13 @@ fetch('http://localhost:3000/api/products/'+productId)
 
                         //console.log(option); 
 
-                    allColors.addEventListener('change', function(e){
-                        for (let i = 0; i > product.colors.length; i++) {
+                        allColors.addEventListener('change', function(e){
+                            for (let i = 0; i > product.colors.length; i++) {
                                 option.innerHTML = e.target.value;
                             } 
-                                let colorChoices = e.target.value; 
-
+                            let colorChoices = e.target.value; 
                                 //console.log(colorChoices); 
-                            });
-
+                        });
                     }
 
                     console.log(product); 
@@ -67,7 +44,7 @@ fetch('http://localhost:3000/api/products/'+productId)
 
 
                     let allQuantityObjets = document.getElementById('quantity');
-                         allQuantityObjets.addEventListener('change', function (e){
+                        allQuantityObjets.addEventListener('change', function (e){
                             allQuantityObjets.innerHTML = e.target.value; 
                              let clientQuantity = e.target.value; 
                            // console.log(e.target.value); 
@@ -77,20 +54,6 @@ fetch('http://localhost:3000/api/products/'+productId)
 
                     //submit.addEventListerner("submit", function(e)) ||  + create function send? FETCH In ?
 
-                    // let submit = document.getElementById('addToCart'); 
-                    // submit.addEventListener('click', function(e){
-                    //     e.preventDefault; 
-                    //     e.stopPropagation;
-                        
-                    //     if (clientQuantity < 1 && colorChoices == false) {
-                    //             alert('you must choose a color and quantity from 1 to 100');
-                    //         }
-                    //     else {
-                    //             alert('your products are added to the cart')
-                    //     }
-
-                    // });
-
                 }); 
 
         }
@@ -98,13 +61,7 @@ fetch('http://localhost:3000/api/products/'+productId)
     })
 
  
-    
 
-
-// all value option 
-
-//const allQuantityObjets = document.getElementById('quantity');
-// all quantity products
 
 
 
