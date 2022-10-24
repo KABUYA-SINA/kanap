@@ -10,9 +10,9 @@ fetch('http://localhost:3000/api/products/'+productId)
                     let titleProducts = document.getElementById('title');
                     titleProducts.innerHTML = product.name;
                     
-                    let images = document.getElementsByClassName('item__img');
-                    for (let image of images)
-                      image.innerHTML = `<img src="${product.imageUrl}" alt="${product.altTxt}">` 
+                    let images = document.getElementsByClassName('item__img')[0];
+                    // for (let image of images)
+                      images.innerHTML = `<img src="${product.imageUrl}" alt="${product.altTxt}">` 
 
                     let prices = document.getElementById('price'); 
                     prices.innerHTML = product.price;
@@ -30,29 +30,48 @@ fetch('http://localhost:3000/api/products/'+productId)
 
                         //console.log(option); 
 
-                        allColors.addEventListener('change', function(e){
-                            for (let i = 0; i > product.colors.length; i++) {
-                                option.innerHTML = e.target.value;
-                            } 
-                            let colorChoices = e.target.value; 
-                                //console.log(colorChoices); 
-                        });
+                        // allColors.addEventListener('change', function(e){
+                        //     for (let i = 0; i > product.colors.length; i++) {
+                        //         option.innerHTML = e.target.value;
+                        //     } 
+                        //     let colorChoices = e.target.value; 
+                        //         //console.log(colorChoices); 
+                        // });
                     }
 
                     console.log(product); 
                     console.log(images);
 
 
-                    let allQuantityObjets = document.getElementById('quantity');
-                        allQuantityObjets.addEventListener('change', function (e){
-                            allQuantityObjets.innerHTML = e.target.value; 
-                             let clientQuantity = e.target.value; 
-                           // console.log(e.target.value); 
-                           // console.log(clientQuantity);
-                        });
+                    // let allQuantityObjets = document.getElementById('quantity');
+                    //     allQuantityObjets.addEventListener('change', function (e){
+                    //         allQuantityObjets.innerHTML = e.target.value; 
+                    //          let clientQuantity = e.target.value; 
+                    //        // console.log(e.target.value); 
+                    //        // console.log(clientQuantity);
+                    //     });
 
 
                     //submit.addEventListerner("submit", function(e)) ||  + create function send? FETCH In ?
+                    let submit = document.getElementById('addToCart');
+                    submit.addEventListener('click', function(e){
+                        let colorChoices = allColors.value;
+                        let quantityChoices = document.getElementById('quantity').value; 
+
+                        if ( quantityChoices >= 1 && quantityChoices <=100 ){
+                            if(colorChoices === '' ){
+                                alert('You must to choose a valid color'); 
+                            }else{
+                                addToCart(productId, colorChoices, quantityChoices);
+                            }
+
+                        }else{
+                            alert('you must choose a color and quantity from 1 to 100');
+
+                        }
+                        console.log(colorChoices);  
+                        console.log(quantityChoices); 
+                       }); 
 
                 }); 
 
