@@ -39,3 +39,21 @@ function addToCart(id, color, quantity){
 
 }
 
+
+function removeProduct(id, color){
+    let products = getAllProducts();
+    if(products[id][color]){
+        if(Object.keys(products[id]).length > 1){
+            delete products[id][color]
+        }else{
+            delete products[id]
+
+        }
+    }
+
+
+    UpdateStorage(products);
+
+    location.reload()
+
+}
