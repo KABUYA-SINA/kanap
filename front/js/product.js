@@ -43,7 +43,6 @@ fetch('http://localhost:3000/api/products/'+productId)
                                 alert('You must to choose a valid color'); 
                             }else{
                                 addToCart(productId, colorChoices, quantityChoices);
-                                alert('Your products has been added in the basket')
                             }
 
                         }else{

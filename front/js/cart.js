@@ -1,6 +1,10 @@
 
 const productInStorages = getAllProducts();
 console.log(productInStorages)
+let AllQuantityOfChoices = document.getElementById('totalQuantity')
+let Quantitys = 0; 
+let totalPriceOfchoices = document.getElementById('totalPrice')
+let totalOfPrices = 0; 
 
 const cartItems = document.getElementById("cart__items")
 
@@ -19,7 +23,7 @@ for (let oneProductInStorages of Object.entries(productInStorages)) {
 
                         for (let oneColor of Object.entries(oneProductInStorages[1])) {
                             console.log(oneColor)
-                            cartItems.innerHTML = ` <article class="cart__item" data-id="${productId}" data-color="${oneColor[0]}">
+                            cartItems.innerHTML += ` <article class="cart__item" data-id="${productId}" data-color="${oneColor[0]}">
                                                         <div class="cart__item__img">
                                                         <img src="${product.imageUrl}" alt="${product.altTxt}"> 
                                                         </div>
@@ -50,7 +54,35 @@ for (let oneProductInStorages of Object.entries(productInStorages)) {
                                     removeProduct(ElementId, ElementColor)
                                 })
                             }
-//Quantité
+
+                            let NewQuantityModifications = document.getElementsByClassName('itemQuantity')
+                            console.log(NewQuantityModifications)
+                            for (let i of Object.values(NewQuantityModifications)) {
+                                console.log(i)
+                                i.addEventListener('change', function(e){
+                                    let targetQuantity = i.closest('article') 
+                                    console.log(targetQuantity)
+
+                                    let productId = targetQuantity.getAttribute('data-id')
+                                    let colorOfProducts = targetQuantity.getAttribute('data-color')
+
+                                    let NewQuantity = e.currentTarget.value
+
+                                    console.log(NewQuantity)
+
+                                    updateQuantity(productId, colorOfProducts, NewQuantity)
+
+                                    alert('Your product are added to your basket')
+                                    location.reload()
+
+                                })
+                            }
+                            Quantitys += parseInt(oneColor[1])
+                            AllQuantityOfChoices.innerHTML = Quantitys
+
+                            totalOfPrices += parseInt(product.price)*parseInt(oneColor[1])
+                            totalPriceOfchoices.innerHTML = totalOfPrices
+
                         }
                     })
                     .catch(function (errorJson) { console.log(errorJson) })
@@ -58,6 +90,8 @@ for (let oneProductInStorages of Object.entries(productInStorages)) {
         })
         .catch(function (errorApi) { console.log(errorApi) })
 }
+
+SubmitBtn.addEventListener('click', Isrequied)
 
 
 
