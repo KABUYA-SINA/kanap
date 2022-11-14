@@ -1,4 +1,3 @@
-
 const productInStorages = getAllProducts();
 console.log(productInStorages)
 let AllQuantityOfChoices = document.getElementById('totalQuantity')
@@ -6,7 +5,9 @@ let Quantitys = 0;
 let totalPriceOfchoices = document.getElementById('totalPrice')
 let totalOfPrices = 0; 
 
+
 const cartItems = document.getElementById("cart__items")
+IdArray();
 
 
 for (let oneProductInStorages of Object.entries(productInStorages)) {
@@ -91,7 +92,12 @@ for (let oneProductInStorages of Object.entries(productInStorages)) {
         .catch(function (errorApi) { console.log(errorApi) })
 }
 
+// PURCHASE EVENT 
+
 SubmitBtn.addEventListener('click', Isrequied)
+
+
+
 
 
 
