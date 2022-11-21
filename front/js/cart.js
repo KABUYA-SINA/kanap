@@ -11,8 +11,6 @@ IdArray()
 
 // PRODUCT IN BASKET 
 for (let oneProductInStorages of Object.entries(productInStorages)) {
-    console.log(oneProductInStorages)
-    console.log(oneProductInStorages[0])
     const productId = oneProductInStorages[0]
 
     // FETCH PRODUCT IN BASKET + ID 
@@ -23,7 +21,6 @@ for (let oneProductInStorages of Object.entries(productInStorages)) {
                     .then(function (product) {
 
                         for (let oneColor of Object.entries(oneProductInStorages[1])) {
-                            console.log(oneColor)
                             cartItems.innerHTML += ` <article class="cart__item" data-id="${productId}" data-color="${oneColor[0]}">
                                                         <div class="cart__item__img">
                                                         <img src="${product.imageUrl}" alt="${product.altTxt}"> 
@@ -59,9 +56,7 @@ for (let oneProductInStorages of Object.entries(productInStorages)) {
 
                             // NEW QUANTITY PRODUCT 
                             let NewQuantityModifications = document.getElementsByClassName('itemQuantity')
-                            console.log(NewQuantityModifications)
                             for (let i of Object.values(NewQuantityModifications)) {
-                                console.log(i)
                                 i.addEventListener('change', function(e){
                                     let targetQuantity = i.closest('article')
                                     let productId = targetQuantity.getAttribute('data-id')
