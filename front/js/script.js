@@ -1,6 +1,7 @@
-//variables
-const allProducts = document.getElementById('items');
+//VARIABLE
+const allProducts = document.getElementById('items')
 
+// FETCH ALL PRODUCTS CALL API
 fetch('http://localhost:3000/api/products')
         .then(function (res) {
             if (res.ok) {
@@ -15,10 +16,12 @@ fetch('http://localhost:3000/api/products')
                         </article>
                         </a>`
                     }
-                 console.log(products); 
-                }); 
+                }).catch((err) => {
+                    console.log(err)
+                }) 
             }
 
+        }).catch((err) => {
+            console.log(err)
         })
 
-//<h3 class="${product.name}">Kanap name1</h3>

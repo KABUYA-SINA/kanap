@@ -1,7 +1,8 @@
-// variables
+// PARAMS URL & ID
 let urlParams = (new URL(location)).searchParams;
 let productId = urlParams.get('id'); 
 
+// FETCH PRODUCT SELETED
 fetch('http://localhost:3000/api/products/'+productId)
     .then(function (res) {
         if (res.ok) {
@@ -28,11 +29,7 @@ fetch('http://localhost:3000/api/products/'+productId)
                         allColors.appendChild(option);
                     }
 
-
-                    console.log(product); 
-                    console.log(images);
-
-
+                    // BUTTON + EVENT
                     let submit = document.getElementById('addToCart');
                     submit.addEventListener('click', function(e){
                         let colorChoices = allColors.value;
@@ -47,19 +44,18 @@ fetch('http://localhost:3000/api/products/'+productId)
 
                         }else{
                             alert('you must choose a color and quantity from 1 to 100');
-
                         }
-                        console.log(colorChoices);  
-                        console.log(quantityChoices); 
-                       }); 
+                    }); 
 
-                }); 
+                }).catch((err) => {
+                    console.log(err)
+                })
 
         }
 
+    }).catch((err) => {
+        console.log(err)
     })
-
- 
 
 
 
