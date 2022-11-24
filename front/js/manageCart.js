@@ -98,7 +98,6 @@ function Isrequied(e){
     let cartForm = document.getElementsByClassName("cart__order__form")[0]
     let inputs = cartForm.elements
     for (let input of inputs) {
-        console.log(input)
         //TYPE VERIFICATION
         let regexForField
         if (input.type === "submit") {
@@ -110,8 +109,6 @@ function Isrequied(e){
         if (input.type === "email") {
             regexForField = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
         }
-
-        console.log(input.nextElementSibling)
 
         //FIELD VERIFICATION
         if (input.value === "") {
