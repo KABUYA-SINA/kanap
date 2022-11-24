@@ -140,9 +140,6 @@ function Isrequied(e){
             city: ThirdField.value,
             email: FourthField.value
         }
-        //console.log(products)
-
-        console.log('fetch')
 
 
         // FETCH ORDER
