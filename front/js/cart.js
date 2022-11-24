@@ -29,7 +29,7 @@ for (let oneProductInStorages of Object.entries(productInStorages)) {
                                                         <div class="cart__item__content__description">
                                                             <h2>${product.name}</h2>
                                                             <p>${oneColor[0]}</p>
-                                                            <p>${product.price}</p>
+                                                            <p>${product.price} €</p>
                                                         </div>
                                                         <div class="cart__item__content__settings">
                                                             <div class="cart__item__content__settings__quantity">
