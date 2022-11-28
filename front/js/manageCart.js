@@ -100,6 +100,8 @@ function Isrequied(e){
     for (let input of inputs) {
         //TYPE VERIFICATION
         let regexForField
+        let SpecialRegEx = /^[^\s]/
+        
         if (input.type === "submit") {
             break
         }
@@ -109,6 +111,7 @@ function Isrequied(e){
         if (input.type === "email") {
             regexForField = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
         }
+
 
         //FIELD VERIFICATION
         if (input.value === "") {
@@ -120,6 +123,9 @@ function Isrequied(e){
         } else if (input.value.match(regexForField) === null) {
             input.style.border = "red 1px solid"
             input.nextElementSibling.innerHTML = "This field is invalid"
+        } else if (!SpecialRegEx.test(input.value)){
+            input.style.border = "red 1px solid"
+            input.nextElementSibling.innerHTML = "Please change the value"
         } else {
             input.style.border = "green 1px solid"
             input.nextElementSibling.innerHTML = ""
